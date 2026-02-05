@@ -2,7 +2,7 @@
 MATRIX Public Release
 
 # DESCRIPTION
-This repository contains the simulation code related to the MATRIX Infrastructure.
+This repository contains the simulation code related to the MATRIX Infrastructure for the paper, "Enter the MATRIX: Learning & Validating Cybersecurity Strategies in Hybrid Simulation and Emulation Environments", submitted to USENIX Security '26.
 
 # Release Notes
 The MATRIX code developed is is subject to release approval from relevant Department of Defense agencies. Obtaining release approval is currently in progress, and the repository will be updated once approval is granted.
