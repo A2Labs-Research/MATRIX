@@ -1,0 +1,99 @@
+<head>
+    <style> body { margin: 0; } </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="//unpkg.com/force-graph"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+  </head>
+  
+  <body>
+    <div>
+      <div class="row p-3 mb-2 bg-primary text-white">
+        <h3>Topology Visualization</h1>
+      </div>
+    </div>
+    <div class="row p-3 mb-2 bg-light">
+      <div class="col-1">
+        <button class="btn btn-primary" onClick=reset()>Show</button>
+      </div>     
+    </div>
+    <div id="graph"></div>
+    
+  
+    <script>
+      var localData = {"nodes":[], "links":[]}
+      const colorMap = {
+        0: "red",
+        1: "blue",
+        2: "green",
+        3: "purple",
+        4: "orange",
+        5: "cyan",
+        6: "magenta",
+        7: "lime",
+        8: "pink",
+        9: "yellow"
+      };
+  
+      const drawNode = (node, ctx) => {
+        const isSevenLetters = node.id.length === 8;
+        const lastChar = node.id[node.id.length - 1];
+        const isNumber = !isNaN(lastChar);
+  
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, 12, 0, 2 * Math.PI, false);
+        ctx.lineWidth = 2;
+  
+        if (isSevenLetters && isNumber) {
+          ctx.strokeStyle = colorMap[lastChar];
+        } else {
+          ctx.strokeStyle = "gray";
+        }
+  
+        ctx.stroke();
+        
+        let label = node.id;
+        const fontSize = 3;
+        ctx.font = `${fontSize}px "Montserrat", Helvetica, Arial, serif`;
+        const textWidth = ctx.measureText(label).width;
+        const bckgDimensions = [textWidth, fontSize].map(
+          (n) => n + (fontSize * 0.5)
+        ); // some padding
+  
+        // Node label
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "black";
+        ctx.fillText(label, node.x, node.y);
+        ctx.fillStyle;
+      }
+  
+      function reset() {
+        fetch('api/reset').then(res => res.json()).then(newdata => {
+  
+          localData['nodes'] = newdata['nodes'];
+          localData['links'] = newdata['links'];
+  
+          const elem = document.getElementById('graph');
+          const Graph = ForceGraph()(elem)
+            .linkDirectionalParticles('animation')
+            .linkDirectionalParticleSpeed('animation_speed')
+            .graphData(localData)
+            .height(800)
+            .nodeId('id')
+            .nodeVal(8)
+            .nodeLabel('label')
+            .linkColor('color')
+            .nodeAutoColorBy('group')
+            .linkSource('source')
+            .linkTarget('target')
+            .linkWidth(4)
+            .linkLineDash(link => link.dashed && [4, 4])
+            .nodeCanvasObjectMode(() => "after")
+            .nodeCanvasObject(drawNode);
+        });
+      }
+    </script>
+  </body>

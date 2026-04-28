@@ -1,0 +1,43 @@
+ 
+Kali_Box:
+  path: Kali_Box_image
+Internal:
+  path: Internal_image
+Gateway:
+  path: Gateway_image
+Gateway2:
+  path: Gateway_image2
+Gateway3:
+  path: Gateway_image3
+Gateway4:
+  path: Gateway_image4
+Velociraptor_Server:
+  path: Velociraptor_Server_image
+linux_user_host1:
+  path: linux_user_host_image1
+linux_user_host2:
+  path: linux_user_host_image2
+linux_decoy_host:
+  path: linux_decoy_host_image
+windows_user_host1:
+  path: windows_user_host_image1
+windows_user_host2:
+  path: windows_user_host_image2
+SIS_Server:
+  path: OP_Server_image
+SIS_Auth:
+  path: OP_Auth_image
+SIS_Database:
+  path: OP_Database_image
+SIS_Front:
+  path: OP_Front_image
+OP_Server:
+  path: OP_Server_image
+OP_Server2:
+  path: OP_Server_image2
+OP_Auth:
+  path: OP_Auth_image
+OP_Database:
+  path: OP_Database_image
+OP_Front:
+  path: OP_Front_image

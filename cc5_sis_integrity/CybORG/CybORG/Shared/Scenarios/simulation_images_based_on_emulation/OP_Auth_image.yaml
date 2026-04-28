@@ -1,0 +1,66 @@
+Test_Host:
+  Processes:
+  - Connections:
+    - local_address: 0.0.0.0
+      local_port: 22
+      Transport Protocol: TCP
+    PID: 1091
+    PPID: 1
+    Path: /usr/sbin
+    Process Name: sshd
+    Process Type: sshd
+    Username: ubuntu
+  - Connections:
+    - local_address: 0.0.0.0
+      local_port: 21
+    PID: 3344
+    PPID: 5566
+    Path: /usr/sbin
+    Process Name: femitter
+    Process Type: femitter
+    Username: ubuntu
+  - Connections:
+    - local_address: 0.0.0.0
+      local_port: 9090
+      Transport Protocol: TCP
+    PID: 1074
+    PPID: 1
+    Process Name: AuthService
+    Username: root
+  System info:
+    Architecture: x64
+    OSDistribution: UBUNTU
+    OSType: LINUX
+    OSVersion: U20_04_3
+  Services:
+    AuthService:
+      active: True
+      PID: 1074
+  User Info:
+    - Groups:
+        - GID: 0
+          Group Name: root
+      UID: 0
+      Username: root
+    - Groups:
+        - GID: 33
+          Group Name: www-data
+      UID: 33
+      Username: www-data
+    - Groups:
+        - GID: 1001
+          Group Name: pi
+      UID: 1001
+      Username: pi
+      Bruteforceable: True
+      Password: raspberry
+    - Groups:
+        - GID: 1000
+          Group Name: ubuntu
+      UID: 1000
+      Username: ubuntu
+    - Groups:
+        - GID: 1001
+          Group Name: GreenAgent
+      UID: 1001
+      Username: GreenAgent

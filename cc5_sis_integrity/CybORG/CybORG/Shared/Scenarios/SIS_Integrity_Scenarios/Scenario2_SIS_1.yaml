@@ -1,0 +1,477 @@
+Agents:
+  Blue:
+    AllowedSubnets:
+      - Subnet_0
+      - Subnet_1
+      - Subnet_2
+    INT:
+      Hosts:
+        Subnet_0_Host_0:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_0_Host_1:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_0_Host_2:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_0_Host_3:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_1_Defender:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_1_Host_0:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_1_Host_1:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_1_Host_2:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_1_Host_3:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_2_Host_4:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_2_Op_Auth:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_2_Op_Database:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_2_Op_Front:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_2_Op_Server:
+          Interfaces: All
+          System info: All
+          User info: All
+    adversary: Red
+    actions:
+      - Sleep
+      - Monitor
+      - CheckForCorruption
+      - Analyse
+      - Remove
+      - DecoyApache
+      - DecoyFemitter
+      - DecoyHarakaSMPT
+      - DecoySmss
+      - DecoySSHD
+      - DecoySvchost
+      - DecoyTomcat
+      - DecoyVsftpd
+      - Restore
+      - RestoreContent
+    agent_type: SleepAgent
+    reward_calculator_type: HybridAvailabilityConfidentiality
+    starting_sessions:
+      - hostname: Subnet_0_Host_0
+        name: VeloSubnet_0_Host_0
+        parent: VeloServer
+        type: VelociraptorClient
+        username: ubuntu
+      - hostname: Subnet_0_Host_1
+        name: VeloSubnet_0_Host_1
+        parent: VeloServer
+        type: VelociraptorClient
+        username: ubuntu
+      - hostname: Subnet_0_Host_2
+        name: VeloSubnet_0_Host_2
+        parent: VeloServer
+        type: VelociraptorClient
+        username: ubuntu
+      - hostname: Subnet_0_Host_3
+        name: VeloSubnet_0_Host_3
+        parent: VeloServer
+        type: VelociraptorClient
+        username: ubuntu
+      - hostname: Subnet_1_Host_0
+        name: VeloSubnet_1_Host_0
+        parent: VeloServer
+        type: VelociraptorClient
+        username: ubuntu
+      - hostname: Subnet_1_Host_1
+        name: VeloSubnet_1_Host_1
+        parent: VeloServer
+        type: VelociraptorClient
+        username: SYSTEM
+      - hostname: Subnet_1_Host_2
+        name: VeloSubnet_1_Host_2
+        parent: VeloServer
+        type: VelociraptorClient
+        username: SYSTEM
+      - hostname: Subnet_1_Host_3
+        name: VeloSubnet_1_Host_3
+        parent: VeloServer
+        type: VelociraptorClient
+        username: SYSTEM
+      - hostname: Subnet_1_Defender
+        name: VeloSubnet_1_Defender
+        parent: VeloServer
+        type: VelociraptorClient
+        username: ubuntu
+      - hostname: Subnet_2_Host_4
+        name: VeloSubnet_2_Host_4
+        parent: VeloServer
+        type: VelociraptorClient
+        username: ubuntu
+      - hostname: Subnet_2_Op_Auth
+        name: VeloSubnet_2_Op_Auth
+        parent: VeloServer
+        type: VelociraptorClient
+        username: ubuntu
+      - hostname: Subnet_2_Op_Database
+        name: VeloSubnet_2_Op_Database
+        parent: VeloServer
+        type: VelociraptorClient
+        username: ubuntu
+      - hostname: Subnet_2_Op_Front
+        name: VeloSubnet_2_Op_Front
+        parent: VeloServer
+        type: VelociraptorClient
+        username: SYSTEM
+      - hostname: Subnet_2_Op_Server
+        name: VeloSubnet_2_Op_Server
+        parent: VeloServer
+        type: VelociraptorClient
+        username: ubuntu
+      - artifacts:
+          - NetworkConnections
+          - ProcessCreation
+          - DefaceFront
+          - DefaceAuth
+        hostname: Subnet_1_Defender
+        name: VeloServer
+        num_children_sessions: 2
+        type: VelociraptorServer
+        username: ubuntu
+    wrappers: [ ]
+  Green:
+    AllowedSubnets:
+      - Subnet_0
+      - Subnet_1
+      - Subnet_2
+    INT:
+      Hosts:
+        Subnet_0_Host_0:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_0_Host_1:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_0_Host_2:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_0_Host_3:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_1_Defender:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_1_Host_0:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_1_Host_1:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_1_Host_2:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_1_Host_3:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_2_Host_4:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_2_Op_Auth:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_2_Op_Database:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_2_Op_Front:
+          Interfaces: All
+          System info: All
+          User info: All
+        Subnet_2_Op_Server:
+          Interfaces: All
+          System info: All
+          User info: All
+    actions:
+    - Sleep
+    - GreenPingSweep
+    - GreenPortScan
+    - GreenConnection
+    - GreenConsumeService
+    agent_type: SleepAgent
+    reward_calculator_type: Success
+    starting_sessions:
+    - hostname: Subnet_0_Host_0
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    - hostname: Subnet_0_Host_1
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    - hostname: Subnet_0_Host_2
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    - hostname: Subnet_0_Host_3
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    - hostname: Subnet_1_Host_0
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    - hostname: Subnet_1_Host_1
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    - hostname: Subnet_1_Host_2
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    - hostname: Subnet_1_Host_3
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    - hostname: Subnet_2_Host_4
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    - hostname: Subnet_2_Op_Auth
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    - hostname: Subnet_2_Op_Database
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    - hostname: Subnet_2_Op_Front
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    - hostname: Subnet_2_Op_Server
+      name: GreenSession
+      type: green_session
+      username: GreenAgent
+    wrappers: []
+  Red:
+    AllowedSubnets:
+      - Subnet_0
+      - Subnet_1
+      - Subnet_2
+    INT:
+      Hosts:
+        Subnet_0_Host_0:
+          Interfaces: All
+          System info: All
+    actions:
+    - Sleep
+    - DiscoverRemoteSystems
+    - DiscoverNetworkServices
+    - ExploitRemoteService
+    - BlueKeep
+    - EternalBlue
+    - FTPDirectoryTraversal
+    - HarakaRCE
+    - HTTPRFI
+    - HTTPSRFI
+    - SQLInjection
+    - PrivilegeEscalate
+    - Impact
+    - SSHBruteForce
+    agent_type: SleepAgent
+    reward_calculator_type: HybridImpactPwn
+    starting_sessions:
+    - hostname: Subnet_0_Host_0
+      name: RedPhish
+      type: RedAbstractSession
+      username: SYSTEM
+    wrappers: []
+Hosts:
+  Subnet_0_Host_0:
+    AWS_Info: []
+    image: windows_user_host1
+    info:
+      Subnet_0_Host_0:
+        Interfaces: All
+    ConfidentialityValue: None
+    AvailabilityValue: None
+  Subnet_0_Host_1:
+    AWS_Info: []
+    image: linux_user_host2
+    info:
+      Subnet_0_Host_1:
+        Interfaces: All
+    ConfidentialityValue: Medium
+    AvailabilityValue: Medium
+  Subnet_0_Host_2:
+    AWS_Info: []
+    image: linux_user_host2
+    info:
+      Subnet_0_Host_2:
+        Interfaces: All
+    AvailabilityValue: None
+  Subnet_0_Host_3:
+    AWS_Info: []
+    image: linux_user_host2
+    info:
+      Subnet_0_Host_3:
+        Interfaces: All
+      Subnet_1_Host_2:
+        Interfaces: IP Address
+    AvailabilityValue: None
+  Subnet_1_Defender:
+    AWS_Info: []
+    image: Velociraptor_Server
+  Subnet_1_Host_0:
+    AWS_Info: []
+    image: windows_user_host2
+    info:
+      Subnet_1_Host_0:
+        Interfaces: All
+    ConfidentialityValue: Medium
+    AvailabilityValue: Medium
+  Subnet_1_Host_1:
+    AWS_Info: []
+    image: Internal
+    info:
+      Subnet_1_Host_1:
+        Interfaces: All
+      Subnet_2_Host_4:
+        Interfaces: IP Address
+    ConfidentialityValue: Medium
+    AvailabilityValue: Medium
+  Subnet_1_Host_2:
+    AWS_Info: []
+    image: Gateway
+    info:
+      Subnet_1_Host_2:
+        Interfaces: All
+    ConfidentialityValue: Medium
+    AvailabilityValue: Medium
+  Subnet_1_Host_3:
+    AWS_Info: []
+    image: Gateway
+    info:
+      Subnet_1_Host_3:
+        Interfaces: All
+    ConfidentialityValue: Medium
+    AvailabilityValue: Medium
+  Subnet_2_Host_4:
+    AWS_Info: []
+    image: windows_user_host1
+    info:
+      Subnet_2_Host_4:
+        Interfaces: All
+    ConfidentialityValue: Medium
+    AvailabilityValue: Medium
+  Subnet_2_Op_Auth:
+    AWS_Info: []
+    image: OP_Auth
+    info:
+      Subnet_2_Op_Auth:
+        Interfaces: All
+        Services:
+        - AuthService
+    ConfidentialityValue: Medium
+    AvailabilityValue: High
+  Subnet_2_Op_Database:
+    AWS_Info: []
+    image: OP_Database
+    info:
+      Subnet_2_Op_Database:
+        Interfaces: All
+        Services:
+        - DBService
+    ConfidentialityValue: Medium
+    AvailabilityValue: High
+  Subnet_2_Op_Front:
+    AWS_Info: []
+    image: OP_Front
+    info:
+      Subnet_2_Op_Front:
+        Interfaces: All
+        Services:
+        - WebFrontService
+    ConfidentialityValue: Medium
+    AvailabilityValue: High
+  Subnet_2_Op_Server:
+    AWS_Info: []
+    image: OP_Server
+    info:
+      Subnet_2_Op_Server:
+        Interfaces: All
+        Services:
+        - OTService
+    ConfidentialityValue: Medium
+    AvailabilityValue: High
+Subnets:
+  Subnet_0:
+    Hosts:
+    - Subnet_0_Host_0
+    - Subnet_0_Host_1
+    - Subnet_0_Host_2
+    - Subnet_0_Host_3
+    NACLs:
+      all:
+        in: all
+        out: all
+    Size: 4
+  Subnet_1:
+    Hosts:
+    - Subnet_1_Defender
+    - Subnet_1_Host_0
+    - Subnet_1_Host_1
+    - Subnet_1_Host_2
+    - Subnet_1_Host_3
+    NACLs:
+      all:
+        in: all
+        out: all
+    Size: 5
+  Subnet_2:
+    Hosts:
+    - Subnet_2_Host_4
+    - Subnet_2_Op_Auth
+    - Subnet_2_Op_Database
+    - Subnet_2_Op_Front
+    - Subnet_2_Op_Server
+    NACLs:
+      all:
+        in: all
+        out: all
+    Size: 5

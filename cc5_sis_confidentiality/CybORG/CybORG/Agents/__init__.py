@@ -1,0 +1,15 @@
+# SimpleAgents
+from CybORG.Agents.SimpleAgents.BaseAgent import BaseAgent
+from CybORG.Agents.SimpleAgents.B_line_SIS import B_lineAgent_SIS
+from CybORG.Agents.SimpleAgents.B_line_SIS_random import B_lineAgent_SIS_random
+from CybORG.Agents.SimpleAgents.BlueMonitorAgent import BlueMonitorAgent
+from CybORG.Agents.SimpleAgents.BlueReactAgent import BlueReactRemoveAgent, BlueReactRestoreAgent, BlueReactBlockAgent
+from CybORG.Agents.SimpleAgents.CounterKillchainAgent import CounterKillchainAgent
+from CybORG.Agents.SimpleAgents.GreenAgent import GreenAgent
+from CybORG.Agents.SimpleAgents.HeuristicRed import HeuristicRed
+from CybORG.Agents.SimpleAgents.KeyboardAgent import KeyboardAgent
+from CybORG.Agents.SimpleAgents.KillchainAgent import KillchainAgent
+from CybORG.Agents.SimpleAgents.Meander_SIS import RedMeanderSISAgent
+from CybORG.Agents.SimpleAgents.Meander_SIS_random import RedMeanderAgent_SIS_random
+from CybORG.Agents.SimpleAgents.SleepAgent import SleepAgent
+from .SimpleAgents.TestAgent import TestAgent
