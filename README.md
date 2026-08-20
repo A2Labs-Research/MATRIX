@@ -1,3 +1,17 @@
+# MATRIX
+
+This repository contains the artifacts for **MATRIX**, presented in our paper **"Enter the MATRIX: Learning & Validating Cybersecurity Strategies in Hybrid Simulation & Emulation Environments"** accepted and to be published at the **IEEE Conference on Dependable and Secure Computing (DSC) 2026**, October 2026.
+
+## Artifact Availability
+
+The repository provides access to the simulation environment, enabling replication of unmodified agent training and evaluation, along with heuristic blue and red agents and resources to train new agents. PPO-based trained agents can be developed and evaluated on the MATRIX platform.
+
+Note on scope:
+- Proprietary trained agents are withheld due to intellectual-property restrictions from external organizations.
+- Emulated environment evaluations require direct access to hosted enclaves and cannot be made public.
+  
+---
+
 # Matrix Stable
 Matrix Stable includes modified versions of CybORG.
 ## version_1
